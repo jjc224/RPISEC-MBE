@@ -77,3 +77,9 @@ flag = '/tmp/lab1A.pass'
 
 %x{(ruby -e "puts #{0x1337d00d - ('C'.ord ^ 0x51)}"; echo 'cat /home/lab1A/.pass > #{flag}') | /levels/lab01/lab1B}
 puts `cat #{flag}`
+
+
+# Output:
+# ----------------------------------------------
+# lab1B@warzone:/levels/lab01$ ruby /tmp/test.rb
+# 1337_3nCRyptI0n_br0
