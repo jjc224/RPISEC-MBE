@@ -75,7 +75,10 @@
 
 flag = '/tmp/lab1A.pass'
 
-%x{(ruby -e "puts #{0x1337d00d - ('C'.ord ^ 0x51)}"; echo 'cat /home/lab1A/.pass > #{flag}') | /levels/lab01/lab1B}
+key   = 'C'.ord ^ 0x51      # We know XOR is an involutory function, so can derive key = P[i] ^ C[i] <=> C[i] = P[i] ^ key, for any plaintext/ciphertext pair.
+input = 0x1337d00d - key    # input = 0x1337d00d - key <=> key = 0x1337d00d - input.
+
+%x{(ruby -e "puts #{input}"; echo 'cat /home/lab1A/.pass > #{flag}') | /levels/lab01/lab1B}
 puts `cat #{flag}`
 
 
