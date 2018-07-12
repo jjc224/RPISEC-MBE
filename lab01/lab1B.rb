@@ -73,7 +73,7 @@
 # TODO: small English write-up of walkthrough.
 
 
-flag = '/tmp/lab1A.pass'
+flag = '/tmp/lab1A.pass'    # 1337_3nCRyptI0n_br0
 
 key   = 'C'.ord ^ 0x51      # We know XOR is an involutory function, so can derive key = P[i] ^ C[i] <=> C[i] = P[i] ^ key, for any plaintext/ciphertext pair.
 input = 0x1337d00d - key    # input = 0x1337d00d - key <=> key = 0x1337d00d - input.
