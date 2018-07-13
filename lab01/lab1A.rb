@@ -39,11 +39,11 @@ if user.size <= 5 || user[3].ord <= 0x1f
 end
 
 user.chars.each do |c|
-	ecx  = serial ^ c.ord
-	edx  = (ecx * 0x88233b2b) >> 32
-	eax  = ((ecx - edx) >> 1) + edx
-	eax  = (eax >> 0xA) * 0x539
-	eax  = ecx - eax
+	ecx = serial ^ c.ord
+	edx = (ecx * 0x88233b2b) >> 32
+	eax = ((ecx - edx) >> 1) + edx
+	eax = (eax >> 0xA) * 0x539
+	eax = ecx - eax
 
 	serial += eax
 end
